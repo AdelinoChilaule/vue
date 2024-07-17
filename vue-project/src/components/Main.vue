@@ -1,53 +1,45 @@
 <template>
-  <nav class="bg-white border-b border-gray-200 shadow-md">
-    <div class="max-w-screen-xl flex items-center justify-between mx-auto p-4">
-      <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
-        <img class="h-10 w-auto" :src="image" alt="Your Company" />
-        <span class="text-2xl font-semibold whitespace-nowrap dark:text-white">ElEvents</span>
-      </a>
-      <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
-        <span class="sr-only">Open main menu</span>
-        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
-        </svg>
-      </button>
-      <div class="hidden w-full md:block md:w-auto" id="navbar-default">
-        <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700 border-b-2 border-gray-200">
-          <li>
-            <a href="#" class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500">Home</a>
-          </li>
-          <li>
-            <router-link  to="/dashboard" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Meus Eventos</router-link>
-          </li>
-          <li>
-            <a href="#" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Criar Eventos</a>
-          </li>
-          <li>
-            <router-link  to="/signin" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Entrar</router-link>
-          </li>
-          <li>
-            <router-link  to="/register" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Cadastrar</router-link>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  
+ <NavBar/>
+ <Banner/>
+ <h2 class="mb-2 p-3 mt-2 text-sky-500 ml-2 text-4xl font-medium leading-tight text-primary">
+  Todos Eventos
+</h2>
+ <div class="flex flex-wrap justify-center mt-8">
+    <Cards class="mx-4 my-4" 
+      image="../assets/img/banner.jpg"
+      subtitle="ALP Cloud" 
+      description="Sabia que o ALP Cloud oferece opções flexíveis para corresponder a vários requisitos empresariais? Escolha o modelo de preços que se adapta às suas necessidades."/>
+    <Cards class="mx-4 my-4" 
+      subtitle="AWS Cloud" 
+      description="Sabia que o ALP Cloud oferece opções flexíveis para corresponder a vários requisitos empresariais?"/>
+    <Cards class="mx-4 my-4"
+      image="../assets/img/bannerr.jpg"
+      subtitle="Alibaba Cloud" 
+      description="Sabia que o ALP Cloud oferece opções flexíveis para corresponder a vários requisitos empresariais?"/>    
+ </div>
+ <Footerr/>
+
 </template>
 
 <script>
-import logo from '../assets/img/logo.jpg';
+import NavBar from '../components/NavBar.vue'
+import Banner from '../components/Banner.vue'
+import Footerr from '../components/Footerr.vue'
+import Cards from './Cards.vue'
 
 export default {
-  name: 'Signin',
-  data() {
-    return {
-      image: logo
-    };
-  }
+  name: 'MainComponent',
+  components: {
+    NavBar,
+    Banner,
+    Cards,
+    Footerr,
+  },  
 }
 </script>
 
 <style scoped>
-/* Estilos específicos do componente Navbar.vue */
+.flex-wrap {
+  justify-content: center;
+}
 </style>
