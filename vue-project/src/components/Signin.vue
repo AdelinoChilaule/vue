@@ -40,7 +40,6 @@
   </template>
   
 <script>
-
   import logo from '../assets/img/logo1.png';
   export default {
   name: 'SignIn',
